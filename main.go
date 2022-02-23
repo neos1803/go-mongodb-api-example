@@ -3,6 +3,7 @@ package main
 import (
 	"go-mongodb-api-example/configs"
 	"go-mongodb-api-example/routes"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -20,5 +21,5 @@ func main() {
 
 	routes.UserRoute(router)
 
-	router.Run("localhost:8000")
+	router.Run(os.Getenv("SERVER_ADDRESS"))
 }
